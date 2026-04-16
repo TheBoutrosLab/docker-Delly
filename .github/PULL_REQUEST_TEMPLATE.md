@@ -14,7 +14,7 @@
 
 ```docker run -u $(id -u):$(id -g) –w <working-directory> -v <directory-you-want-to-mount>:<how-you-want-to-mount-it-within-the-docker> --rm <docker-image-name> <command-to-the-docker-with-all-parameters>```
 
-#### My command: 
+#### My command:
 
 ```Provide the command you ran here```
 
