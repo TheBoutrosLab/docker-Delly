@@ -10,6 +10,18 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 
 ---
+## [1.7.3] - 2026-04-16
+### Added
+- Add release automation workflows for prepare, finalize, and alias tags
+- Add `dependabot.yml` for weekly dependency and GitHub Actions updates
+
+### Changed
+- Update Delly `v1.5.0` to `v1.7.3`
+- Update Miniforge version to `v26.1.1-2`
+- Update Ubuntu version to `v24.04`
+- Replace `condaforge/mambaforge` with `condaforge/miniforge3`
+
+---
 ## [1.5.0] - 2025-07-30
 ### Changed
 - Update Delly `v1.3.3` to `v1.5.0`

@@ -1,25 +1,36 @@
-ARG MINIFORGE_VERSION=24.9.2-0
-ARG UBUNTU_VERSION=25.04
+ARG MINIFORGE_VERSION=26.1.1-2
+ARG UBUNTU_VERSION=24.04
+ARG CONDA_ENV_PATH=/opt/conda/envs/delly
 
-FROM condaforge/mambaforge:${MINIFORGE_VERSION} AS builder
+FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 
-# Use conda to install tools and dependencies into /usr/local
-ARG DELLY_VERSION=1.5.0
+ARG CONDA_ENV_PATH
 
-RUN mamba create -qy -p /usr/local \
+# Use conda to install tools and dependencies into the configured environment path
+ARG DELLY_VERSION=1.7.3
+
+RUN mamba create -qy -p ${CONDA_ENV_PATH} \
     -c bioconda \
     -c conda-forge \
-    delly==${DELLY_VERSION}
+    delly==${DELLY_VERSION} && \
+    mamba clean -afy
 
 FROM ubuntu:${UBUNTU_VERSION} AS final
-COPY --from=builder /usr/local /usr/local
+
+ARG CONDA_ENV_PATH
+
+COPY --from=builder ${CONDA_ENV_PATH} ${CONDA_ENV_PATH}
+
+ENV CONDA_ENV_PATH="${CONDA_ENV_PATH}" \
+    PATH="${CONDA_ENV_PATH}/bin:${PATH}"
 
 # Add a new user/group called bldocker
 RUN groupadd -g 500001 bldocker && \
-    useradd -r -u 500001 -g bldocker bldocker
+    useradd -m -r -u 500001 -g bldocker bldocker
 
 # Change the default user to bldocker from root
 USER bldocker
 
-LABEL maintainer="Mohammed Faizal Eeman Mootor <mmootor@mednet.ucla.edu>" \
-      org.opencontainers.image.source=https://github.com/uclahs-cds/docker-Delly
+LABEL maintainer="Yash Patel <ypatel@sbpdiscovery.org>" \
+      org.opencontainers.image.source=https://github.com/TheBoutrosLab/docker-Delly \
+      org.opencontainers.image.description="Dockerfile for Delly"
