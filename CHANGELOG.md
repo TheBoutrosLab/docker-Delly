@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2026-06-18
+
+### Changed
+
+- Update Delly from `v2.0.0` to `v2.1.0`
+
 ## [2.0.0] - 2026-05-18
 
 ### Changed
@@ -149,3 +155,4 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 [1.5.0]: https://github.com/TheBoutrosLab/docker-Delly/compare/v1.3.3...v1.5.0
 [1.7.3]: https://github.com/TheBoutrosLab/docker-Delly/compare/v1.5.0...v1.7.3
 [2.0.0]: https://github.com/TheBoutrosLab/docker-Delly/compare/v1.7.3...v2.0.0
+[2.1.0]: https://github.com/TheBoutrosLab/docker-Delly/compare/v2.0.0...v2.1.0
