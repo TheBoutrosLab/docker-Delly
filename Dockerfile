@@ -7,7 +7,7 @@ FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 ARG CONDA_ENV_PATH
 
 # Use conda to install tools and dependencies into the configured environment path
-ARG DELLY_VERSION=2.3.0
+ARG DELLY_VERSION=2.5.1
 
 RUN mamba create -qy -p ${CONDA_ENV_PATH} \
     -c bioconda \
