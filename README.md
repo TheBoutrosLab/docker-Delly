@@ -4,7 +4,7 @@ Boutros Lab Docker image for Delly.
 # Version
 | Tool | Version |
 |------|---------|
-| Delly | 2.8.1 |
+| Delly | 2.8.2 |
 
 ---
 

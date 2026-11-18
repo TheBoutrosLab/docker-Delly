@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.8.2] - 2026-11-16
+
+### Changed
+
+- Update Delly from `v2.8.1` to `v2.8.2`
+
 ## [2.8.1] - 2026-11-04
 
 ### Changed
